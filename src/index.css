@@ -1,13 +1,138 @@
+/* Tailwind directives removed — project doesn't run Tailwind processor in this setup.
+   Provide equivalent basic styles here. */
+
+/* Simple reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background-color: #f3f4f6; /* close to Tailwind bg-gray-100 */
+  color: #111827; /* close to Tailwind text-gray-900 */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Utility classes used in components (small subset) */
+.container { max-width: 1024px; margin-left: auto; margin-right: auto; }
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.rounded-full { border-radius: 9999px; }
+.rounded-lg { border-radius: 0.5rem; }
+.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-grow { flex: 1 1 auto; }
+.min-h-screen { min-height: 100vh; }
+.py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mt-8 { margin-top: 2rem; }
+.w-40 { width: 10rem; }
+.h-40 { height: 10rem; }
+.w-12 { width: 3rem; }
+.h-12 { height: 3rem; }
+.border-4 { border-width: 4px; }
+.border-2 { border-width: 2px; }
+.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.max-w-2xl { max-width: 42rem; }
+.container { max-width: 1024px; margin-left: auto; margin-right: auto; }
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.rounded-full { border-radius: 9999px; }
+.rounded-lg { border-radius: 0.5rem; }
+.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); }
+.font-bold { font-weight: 700; }
+.font-extrabold { font-weight: 800; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-grow { flex: 1 1 auto; }
+.min-h-screen { min-height: 100vh; }
+.py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mt-8 { margin-top: 2rem; }
+.w-40 { width: 10rem; }
+.h-40 { height: 10rem; }
+.w-12 { width: 3rem; }
+.h-12 { height: 3rem; }
+.border-4 { border-width: 4px; }
+.border-2 { border-width: 2px; }
+.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.max-w-2xl { max-width: 42rem; }
+[class*="bg-[#4B0D0D]"] { background-color: #4B0D0D; }
+[class*="text-white"] { color: #ffffff; }
+[class*="text-gray-200"] { color: #e5e7eb; }
+[class*="text-gray-900"] { color: #111827; }
+[class*="bg-[#FFD700]"] { background-color: #FFD700; }
+[class*="text-[#4B0D0D]"] { color: #4B0D0D; }
+[class*="hover:text-[#FFD700]"]:hover { color: #FFD700; }
+[class*="hover:bg-yellow-400"]:hover { background-color: #f6e05e; }
+.transition { transition: all 0.2s ease-in-out; }
+.duration-200 { transition-duration: 200ms; }
+.duration-300 { transition-duration: 300ms; }
+.tracking-wide { letter-spacing: 0.025em; }
+.space-x-3 > * + * { margin-left: 0.75rem; }
+.space-x-6 > * + * { margin-left: 1.5rem; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.font-medium { font-weight: 500; }
+
+
+/* Semantic site classes */
+.site-bg { background-color: #4B0D0D; }
+.site-text { color: #ffffff; }
+.gold-text { color: #FFD700; }
+.gold-bg { background-color: #FFD700; }
+.brand-text { color: #4B0D0D; }
+.text-muted { color: #d1d5db; } /* gray-300-ish */
+
+/* Buttons */
+.btn-gold { background-color: #FFD700; color: #4B0D0D; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; }
+.btn-gold:hover { background-color: #f6e05e; }
+.btn-danger { background-color: #ef4444; color: #ffffff; padding: 0.5rem 1rem; border-radius: 0.5rem; }
+.btn-danger:hover { background-color: #dc2626; }
+
+/* Links */
+.link-gold { color: inherit; text-decoration: none; }
+.link-gold:hover { color: #FFD700; text-decoration: underline; }
+
+/* header logo */
+.site-logo { height: 40px; width: 40px; }
+.site-logo-small { height: 28px; width: 28px; }
+
+/* Tricolor watermark for landing page: green, yellow, red subtle diagonal bands */
+.tricolor-watermark {
+  /* Horizontal subtle bands: green (top), yellow (middle), red (bottom) */
+  background-image: linear-gradient(to bottom,
+    rgba(34,197,94,0.12) 0%,
+    rgba(34,197,94,0.12) 33%,
+    rgba(250,204,21,0.10) 33%,
+    rgba(250,204,21,0.10) 66%,
+    rgba(239,68,68,0.08) 66%,
+    rgba(239,68,68,0.08) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* make the section tall enough for bands to be visible */
+  min-height: 70vh;
+  /* ensure the gradient blends nicely on light backgrounds */
+  background-blend-mode: lighten;
 }
+
+.transition { transition: all 0.2s ease-in-out; }
+.duration-200 { transition-duration: 200ms; }
+.duration-300 { transition-duration: 300ms; }
+.tracking-wide { letter-spacing: 0.025em; }
+.space-x-3 > * + * { margin-left: 0.75rem; }
+.space-x-6 > * + * { margin-left: 1.5rem; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.font-medium { font-weight: 500; }
+.text\-\[#FFD700\] { color: #FFD700; }
+
