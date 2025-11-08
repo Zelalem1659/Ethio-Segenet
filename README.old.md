@@ -1,2 +1,2 @@
-# Ethio-Segenet
-Official website for Ethio Segenet – Ethiopian political commentary and discussions.
+# Ethio-360
+Official website for Ethio 360 – Ethiopian political commentary and discussions.

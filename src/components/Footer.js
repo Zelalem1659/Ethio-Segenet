@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="site-bg text-muted text-center py-6 mt-8">
       <p>
-        © {new Date().getFullYear()} Ethio Segenet ·{" "}
+        © {new Date().getFullYear()} Ethio 360 ·{" "}
         <a
           href="https://www.youtube.com/@ethiosegenet"
           target="_blank"

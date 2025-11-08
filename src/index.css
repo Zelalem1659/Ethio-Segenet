@@ -1,138 +1,133 @@
-/* Tailwind directives removed — project doesn't run Tailwind processor in this setup.
-   Provide equivalent basic styles here. */
-
-/* Simple reset */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  background-color: #f3f4f6; /* close to Tailwind bg-gray-100 */
-  color: #111827; /* close to Tailwind text-gray-900 */
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Utility classes used in components (small subset) */
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+/* Basic utilities used by components */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
 .container { max-width: 1024px; margin-left: auto; margin-right: auto; }
-.text-center { text-align: center; }
-.mx-auto { margin-left: auto; margin-right: auto; }
-.rounded-full { border-radius: 9999px; }
-.rounded-lg { border-radius: 0.5rem; }
-.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); }
-.font-bold { font-weight: 700; }
-.font-extrabold { font-weight: 800; }
 .flex { display: flex; }
-.flex-col { flex-direction: column; }
-.flex-grow { flex: 1 1 auto; }
-.min-h-screen { min-height: 100vh; }
-.py-16 { padding-top: 4rem; padding-bottom: 4rem; }
-.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-.mt-6 { margin-top: 1.5rem; }
-.mt-8 { margin-top: 2rem; }
-.w-40 { width: 10rem; }
-.h-40 { height: 10rem; }
-.w-12 { width: 3rem; }
-.h-12 { height: 3rem; }
-.border-4 { border-width: 4px; }
-.border-2 { border-width: 2px; }
-.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-.text-2xl { font-size: 1.5rem; line-height: 2rem; }
-.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
-.max-w-2xl { max-width: 42rem; }
-.container { max-width: 1024px; margin-left: auto; margin-right: auto; }
-.text-center { text-align: center; }
-.mx-auto { margin-left: auto; margin-right: auto; }
-.rounded-full { border-radius: 9999px; }
-.rounded-lg { border-radius: 0.5rem; }
-.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); }
-.font-bold { font-weight: 700; }
-.font-extrabold { font-weight: 800; }
-.flex { display: flex; }
-.flex-col { flex-direction: column; }
-.flex-grow { flex: 1 1 auto; }
-.min-h-screen { min-height: 100vh; }
-.py-16 { padding-top: 4rem; padding-bottom: 4rem; }
-.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-.mt-6 { margin-top: 1.5rem; }
-.mt-8 { margin-top: 2rem; }
-.w-40 { width: 10rem; }
-.h-40 { height: 10rem; }
-.w-12 { width: 3rem; }
-.h-12 { height: 3rem; }
-.border-4 { border-width: 4px; }
-.border-2 { border-width: 2px; }
-.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-.text-2xl { font-size: 1.5rem; line-height: 2rem; }
-.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
-.max-w-2xl { max-width: 42rem; }
-[class*="bg-[#4B0D0D]"] { background-color: #4B0D0D; }
-[class*="text-white"] { color: #ffffff; }
-[class*="text-gray-200"] { color: #e5e7eb; }
-[class*="text-gray-900"] { color: #111827; }
-[class*="bg-[#FFD700]"] { background-color: #FFD700; }
-[class*="text-[#4B0D0D]"] { color: #4B0D0D; }
-[class*="hover:text-[#FFD700]"]:hover { color: #FFD700; }
-[class*="hover:bg-yellow-400"]:hover { background-color: #f6e05e; }
-.transition { transition: all 0.2s ease-in-out; }
-.duration-200 { transition-duration: 200ms; }
-.duration-300 { transition-duration: 300ms; }
-.tracking-wide { letter-spacing: 0.025em; }
-.space-x-3 > * + * { margin-left: 0.75rem; }
-.space-x-6 > * + * { margin-left: 1.5rem; }
 .items-center { align-items: center; }
 .justify-between { justify-content: space-between; }
-.font-medium { font-weight: 500; }
+.justify-center { justify-content: center; }
+.min-h-screen { min-height: 100vh; }
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.w-48 { width: 12rem; }
+.h-48 { height: 12rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-16 { padding-top: 4rem; padding-bottom: 4rem; }
 
-
-/* Semantic site classes */
-.site-bg { background-color: #4B0D0D; }
-.site-text { color: #ffffff; }
+/* Header/theme utilities */
+.site-bg { background-color: #ffffff; }
+.site-text { color: #111827; }
 .gold-text { color: #FFD700; }
-.gold-bg { background-color: #FFD700; }
-.brand-text { color: #4B0D0D; }
-.text-muted { color: #d1d5db; } /* gray-300-ish */
-
-/* Buttons */
-.btn-gold { background-color: #FFD700; color: #4B0D0D; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; }
-.btn-gold:hover { background-color: #f6e05e; }
-.btn-danger { background-color: #ef4444; color: #ffffff; padding: 0.5rem 1rem; border-radius: 0.5rem; }
-.btn-danger:hover { background-color: #dc2626; }
-
-/* Links */
 .link-gold { color: inherit; text-decoration: none; }
-.link-gold:hover { color: #FFD700; text-decoration: underline; }
+.link-gold:hover { color: #FFD700; }
 
-/* header logo */
-.site-logo { height: 40px; width: 40px; }
-.site-logo-small { height: 28px; width: 28px; }
-
-/* Tricolor watermark for landing page: green, yellow, red subtle diagonal bands */
-.tricolor-watermark {
-  /* Horizontal subtle bands: green (top), yellow (middle), red (bottom) */
+/* Vertical tricolor background: green -> yellow -> red from top to bottom */
+.tricolor-vertical {
+  /* stronger, fully saturated bands */
   background-image: linear-gradient(to bottom,
-    rgba(34,197,94,0.12) 0%,
-    rgba(34,197,94,0.12) 33%,
-    rgba(250,204,21,0.10) 33%,
-    rgba(250,204,21,0.10) 66%,
-    rgba(239,68,68,0.08) 66%,
-    rgba(239,68,68,0.08) 100%
+    #22c55e 0%,
+    #22c55e 33%,
+    #facc15 33%,
+    #facc15 66%,
+    #ef4444 66%,
+    #ef4444 100%
   );
   background-repeat: no-repeat;
   background-size: cover;
-  /* make the section tall enough for bands to be visible */
-  min-height: 70vh;
-  /* ensure the gradient blends nicely on light backgrounds */
-  background-blend-mode: lighten;
+  position: relative;
+  overflow: hidden;
 }
 
-.transition { transition: all 0.2s ease-in-out; }
-.duration-200 { transition-duration: 200ms; }
-.duration-300 { transition-duration: 300ms; }
-.tracking-wide { letter-spacing: 0.025em; }
-.space-x-3 > * + * { margin-left: 0.75rem; }
-.space-x-6 > * + * { margin-left: 1.5rem; }
-.items-center { align-items: center; }
-.justify-between { justify-content: space-between; }
-.font-medium { font-weight: 500; }
-.text\-\[#FFD700\] { color: #FFD700; }
+/* Header / Footer maroon bar like screenshot */
+.site-header {
+  background-color: #4B000D; /* maroon */
+  color: #FFD700;
+}
+.site-header .link-gold { color: #fff; }
+.site-header .link-gold:hover { color: #FFD700; }
+
+/* Footer */
+.site-footer { background-color: #4B000D; color: #FFD700; padding: 1rem 0; text-align: center; }
+
+/* Hero: horizontal pastel bands (green, beige, pink) */
+.hero-horizontal {
+  background-image: linear-gradient(to bottom,
+    rgba(205, 245, 222, 1) 0%,   /* pale green */
+    rgba(205, 245, 222, 1) 33%,
+    rgba(250, 244, 224, 1) 33%,  /* pale beige */
+    rgba(250, 244, 224, 1) 66%,
+    rgba(249, 230, 235, 1) 66%,  /* pale pink */
+    rgba(249, 230, 235, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* White circular wrapper for logo */
+.hero-logo-wrap { display: inline-block; background: #fff; padding: 1rem; border-radius: 9999px; box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+
+/* CTA button */
+.btn-primary { background: #FFD700; color: #4B000D; padding: 0.6rem 1.2rem; border-radius: 9999px; font-weight: 700; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.08); text-decoration: none; }
+.btn-primary:hover { background: #f5d018; }
+
+
+.tricolor-vertical::before {
+  /* subtle dark overlay in the center to improve text/logo contrast */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.12) 50%, rgba(0,0,0,0.02) 100%);
+  pointer-events: none;
+}
+
+/* Ensure content inside is positioned above overlay */
+.tricolor-vertical > * { position: relative; z-index: 1; }
+
+/* Responsive: on small screens make mega menu full-width stacked */
+@media (max-width: 768px) {
+  .mega-menu-container { flex-direction: column; width: 100% !important; }
+  .mega-menu-container .menu-column { width: 100%; margin: 0.5rem 0; }
+  .mega-menu-container { padding: 1rem; }
+  .mega-menu-mobile-panel {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 60; background: #fff; overflow-y: auto; padding: 1.5rem;
+  }
+  .mega-close-btn { position: absolute; right: 1rem; top: 1rem; background: #ef4444; color: #fff; border: none; padding: 0.5rem 0.75rem; border-radius: 6px; }
+}
+
+/* Slide-in/out animation for mobile panel */
+@keyframes slide-up-in {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes slide-down-out {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(100%); opacity: 0; }
+}
+.slide-in {
+  animation: slide-up-in 320ms cubic-bezier(.2,.8,.2,1) forwards;
+}
+.slide-out {
+  animation: slide-down-out 240ms cubic-bezier(.2,.8,.2,1) forwards;
+}
 
